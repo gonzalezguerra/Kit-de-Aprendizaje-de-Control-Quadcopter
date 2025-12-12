@@ -1,0 +1,106 @@
+# 🛠️ Banco de Pruebas de Actitud (Attitude Test Bench)
+
+Este banco de pruebas permite estudiar la dinámica de **actitud (roll, pitch y yaw)** de un dron de forma segura y sin riesgo de desplazamiento. Para este proyecto se utiliza una solución extremadamente simple y accesible: **una montura de trípode de cámara con rótula tipo ball-head**.
+
+La rótula del trípode ya proporciona libertad de movimiento angular en múltiples ejes, eliminando la necesidad de construir un cardán completo.
+
+---
+
+## 🎯 Objetivo
+
+Permitir que el dron pueda rotar libremente en roll, pitch y yaw bajo control real, sin riesgo de desplazarse o caer.
+
+---
+
+# 📐 Diseño General
+
+El banco consiste en:
+
+- Un trípode de cámara estable.
+- Una rótula tipo **ball-head** (común en cámaras fotográficas).
+- Un adaptador impreso que conecta el dron a la rótula.
+
+La rótula permite **3 grados de libertad**:
+- Rotación lateral (roll)  
+- Rotación hacia adelante/atrás (pitch)  
+- Giro horizontal aprovechando la base del trípode (yaw)
+
+---
+
+# 🧱 Materiales Necesarios
+
+| Componente | Cantidad | Notas |
+|-----------|----------|-------|
+| Trípode de cámara | 1 | Ojalá de aluminio y buena estabilidad |
+| Rótula ball-head | 1 | Muchas ya vienen incorporadas |
+| Tornillo estándar 1/4"-20 | 1 | Rosca estándar de trípodes |
+| Adaptador 3D/PLA | 1 | Fija el dron al tornillo |
+| Llave Allen | — | Ajustes menores |
+
+---
+
+# 🏗️ Instrucciones de Construcción
+
+### 1. **Preparar el trípode**
+- Extiende las patas al máximo para mayor estabilidad.
+- Asegura que la base esté nivelada.
+
+### 2. **Instalar o ajustar la rótula**
+- Si no viene incluida, atorníllala al trípode.
+- Verifica que la rótula gire libremente en todas direcciones.
+
+### 3. **Construir el adaptador**
+El adaptador debe:
+
+- Tener un orificio para un tornillo 1/4"-20.
+- Ofrecer una superficie plana para atornillar el dron.
+- Ser ligero (PLA recomendado).
+
+Opcionalmente puedes imprimir una placa con forma del chasis del dron para un ajuste perfecto.
+
+### 4. **Montar el dron**
+- Atornilla el dron al adaptador.
+- Ajusta la rótula para que quede centrado y balanceado.
+
+### 5. **Asegurar los límites de movimiento**
+Aunque la rótula es segura, puedes agregar:
+
+- Topes suaves de goma
+- Correas de seguridad
+- Limitadores impresos en PLA
+
+---
+
+# 🚀 Uso del Banco
+
+1. Energiza el dron (sin baterías externas cerca).
+2. Activa el firmware de control.
+3. Permite que el dron intente estabilizarse.
+4. Observa respuestas reales de actitud:
+   - Oscilaciones
+   - Saturaciones
+   - Tiempo de respuesta
+   - Errores estáticos
+   - Interacción entre ejes
+
+Ideal para probar PID en roll, pitch y yaw.
+
+---
+
+# 🎓 Resultados Esperados
+
+Este banco permite:
+
+- Validar control de actitud real sin vuelo  
+- Estudiar efectos de desbalanceo  
+- Probar nuevos controladores (LQR, PID, etc.)  
+
+---
+
+# 🛡️ Seguridad
+
+- Mantén siempre el trípode estable y pesado.  
+- Nunca uses el banco cerca de fuentes flamables.  
+- Mantén distancia de las hélices.  
+- No operar si la rótula presenta holguras.  
+
