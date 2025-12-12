@@ -1,0 +1,102 @@
+# 🛠️ Banco de Pruebas de Altitud (Altitude Test Bench)
+
+El banco de pruebas de altitud permite estudiar la dinámica **únicamente vertical** del dron, aislando el control de altura y evitando movimientos de rotación o desplazamientos laterales. Es una plataforma segura, económica y fácil de construir.
+
+---
+
+## 🎯 Objetivo
+Permitir experimentos de control de altitud en un entorno estable y libre de riesgos, usando barras guía que restringen al dron a un movimiento **1D (eje Z)**.
+
+---
+
+# 📐 Diseño General
+
+El sistema consiste en:
+
+- Dos **barras de acero rectas y paralelas** que actúan como guía.
+- Un **carro o soporte deslizante**, firmemente unido al dron.
+- Una base rígida para sostener ambas barras.
+- Un tope superior y uno inferior para evitar sobrecarreras.
+
+La estructura mantiene al dron alineado verticalmente mientras puede generar empuje real con sus hélices.
+
+---
+
+# 🧱 Materiales Necesarios
+
+| Componente | Cantidad | Notas |
+|-----------|----------|-------|
+| Barras de acero rectificadas (12–16 mm) | 2 | Actúan como rieles verticales |
+| Base de madera o metal | 1 | Sostiene las barras |
+| Abrazaderas o soportes metálicos | 4 | Mantienen las barras firmes |
+| Carro deslizante en PLA o MDF | 1 | Se fija al dron |
+| Tornillos M4/M5 | varios | Para fijación |
+| Tope superior e inferior | 2 | Seguridad |
+
+---
+
+# 🏗️ Instrucciones de Construcción
+
+### 1. **Preparar la base**
+- Usa una base rígida (madera 2 cm o aluminio).
+- Marca y perfora los orificios para fijar las barras.
+
+### 2. **Montar las barras verticales**
+- Instala las dos barras paralelas, separadas por 8–12 cm.
+- Usa abrazaderas metálicas o soportes impresos en PLA.
+- Asegura que queden perfectamente verticales (nivel recomendado).
+
+### 3. **Construir el carro deslizante**
+El carro debe:
+
+- Tener dos orificios con bujes plásticos que calcen con las barras.
+- Mantener el dron centrado entre los rieles.
+- Ser ligero para no alterar la dinámica.
+
+Puedes imprimirlo en PLA o cortar las piezas en MDF y unirlas.
+
+### 4. **Montar el dron en el carro**
+- Atornilla el dron al carro mediante sus soportes inferiores.
+- Asegura que quede alineado con el centro de las barras.
+
+### 5. **Instalar los topes**
+- Coloca topes arriba y abajo de las barras.
+- Evitan daños en caso de falla del controlador.
+
+---
+
+# 🚀 Uso del Banco
+
+1. Conecta el dron a la fuente o batería.
+2. Inicializa el firmware del ESP32.
+3. Coloca el carro en el punto medio de las barras.
+4. Activa el controlador de altitud.
+5. Observa:
+   - Altura alcanzada.
+   - Tiempo de estabilización.
+   - Saturación de motores.
+   - Overshoot/undershoot.
+
+---
+
+# 🎓 Resultados Esperados
+
+Este banco permite estudiar:
+
+- Control PID de altitud  
+- Saturación de motores  
+- Efecto de la batería en empuje  
+- Respuesta paso del sistema  
+- Estabilidad y oscilaciones  
+
+---
+
+# 🛡️ Seguridad
+
+- Nunca operar sin topes.  
+- Usar hélices balanceadas.  
+- Mantener manos alejadas de las hélices.  
+
+---
+
+Si deseas, puedo generar también un **DXF del carro deslizante** o un **diagramita SVG** para incluirlo aquí.
