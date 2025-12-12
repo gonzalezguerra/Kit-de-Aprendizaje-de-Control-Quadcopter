@@ -22,8 +22,6 @@ Este proyecto está diseñado como una plataforma accesible para experimentar co
 - Modelación y simulación
 - Construcción de UAV educativo
 
-Además, este mismo dron ha servido como base para un **nuevo proyecto académico de control automático**, el cual integra simulación en **Webots** y experimentos reales.
-
 ---
 
 # 🛠️ Componentes y Costos Estimados
@@ -53,11 +51,3 @@ La siguiente tabla representa los costos aproximados para replicar la plataforma
 | Magnetómetro HMC5883L | $3.500 | AFEL |
 | Sensor distancia láser VL53L0X | $6.000 | AFEL |
 | **TOTAL ESTIMADO** | **$127.300** | |
-
----
-
-# 🚀 Cómo comenzar
-
-### 1. Clonar el repositorio
-```bash
-git clone https://github.com/tu_usuario/tu_repo.git
