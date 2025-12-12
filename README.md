@@ -1,48 +1,62 @@
-# Kit-de-Aprendizaje-de-Control-Quadcopter
+# Proyecto Educativo de Control con ESP32 y UAV (DXF + Firmware + Materiales)
 
-# Proyecto de Aprendizaje de Control con ESP32 y Dron (DXF + Código + Materiales)
+Este repositorio reúne todos los recursos necesarios para que cualquier estudiante pueda **aprender control automático de manera económica y práctica**, utilizando una **ESP32**, sensores estándar y una estructura de dron diseñada para corte láser.
 
-Este repositorio reúne todos los archivos necesarios para que cualquier persona pueda **aprender conceptos fundamentales de control automático** implementando un sistema basado en **ESP32**, incluyendo la estructura física del dron (archivo DXF), el firmware en PlatformIO, y una guía básica de materiales.
-
-El objetivo del proyecto es ofrecer un recurso **práctico, económico y reproducible**, ideal para estudiantes que busquen experimentar con controladores PID, adquisición de datos, simulaciones y actuadores reales.
-
----
-
-## 📁 Contenidos del repositorio
-
+El proyecto incluye:
+- Diseño del frame en **DXF**
+- Firmware completo para **PlatformIO**
+- Lista detallada de componentes y costos
+- Guías prácticas para montaje y pruebas
+- Material para extender el proyecto en cursos de control
 
 ---
 
-## 🚀 Objetivo del proyecto
+# 🧩 Descripción General
 
-Este proyecto busca:
+Este proyecto está diseñado como una plataforma accesible para experimentar con:
 
-- Entregar una **plataforma de bajo costo** para enseñar y experimentar con control automático.  
-- Facilitar la **implementación de controladores PID** y otras estrategias.  
-- Permitir a estudiantes visualizar en la práctica conceptos como:  
-  - actuadores,  
-  - sensores,  
-  - lazos de retroalimentación,  
-  - limitaciones físicas de modelos,  
-  - ruido, saturaciones y retardo.  
+- Control PID  
+- Limitaciones físicas del control (saturación, ruido, retardo)
+- Integración de sensores (IMU, magnetómetro, ToF)
+- Actuadores (motores brushless + ESC)
+- Modelación y simulación
+- Construcción de UAV educativo
 
-Además, este proyecto fue usado en el curso de Control para desarrollar un **nuevo proyecto de laboratorio**, combinando el dron físico con simulaciones en Webots.
+Además, este mismo dron ha servido como base para un **nuevo proyecto académico de control automático**, el cual integra simulación en **Webots** y experimentos reales.
 
 ---
 
-## 🛠️ Requisitos
+# 🛠️ Componentes y Costos Estimados
 
-- **ESP32** (modelo recomendado: ESP32-DevKitC o equivalente)  
-- **PlatformIO** instalado (VSCode recomendado)  
-- Sensor de temperatura, actuador, ventilador, motores o elementos según el ejemplo elegido.  
-- Acceso a un servicio de corte láser (para el DXF).  
-- Fuente de alimentación 5–12 V.  
+La siguiente tabla representa los costos aproximados para replicar la plataforma (valores en CLP).
 
-*Todos los detalles están en `materiales/cosas_a_comprar.txt`.*
+> Esta tabla proviene del diseño original en LaTeX del proyecto, convertida a formato Markdown para uso en GitHub.
+
+### **Tabla de costos (Markdown)**
+
+| **Componente** | **Costo Estimado (CLP)** | **Proveedor** |
+|----------------|---------------------------|---------------|
+| **Cuerpo UAV** |                           |               |
+| Base madera 3 mm | $2.500 | Sodimac |
+| Corte láser | $7.000 | Tago |
+| Soportes PLA (impresión 3D) | ≈ $2.000 | Bibliotecas UC |
+| **Alimentación y Actuadores** | | |
+| Batería LiPo 11.1 V, 3000 mAh | $17.600 | Aliexpress |
+| Motores brushless 2212 2200 KV (x4) | $36.000 | AFEL |
+| Drivers ESC 30 A (x4) | $17.200 | Aliexpress |
+| Conectores XT60 PCB | $7.500 | Aliexpress |
+| Adaptadores XT60 a T | $8.000 | AFEL |
+| Hélices fibra de carbono | $11.000 | AFEL |
+| **Electrónica** | | |
+| ESP32 (38 pines) | $5.000 | Aliexpress |
+| MPU6050 (IMU) | $4.000 | AFEL |
+| Magnetómetro HMC5883L | $3.500 | AFEL |
+| Sensor distancia láser VL53L0X | $6.000 | AFEL |
+| **TOTAL ESTIMADO** | **$127.300** | |
 
 ---
 
-## 📦 Instrucciones de uso
+# 🚀 Cómo comenzar
 
 ### 1. Clonar el repositorio
 ```bash
