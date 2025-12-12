@@ -1,0 +1,48 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>WS Diag</title>
+<pre id="log" style="font:14px/1.35 monospace; white-space:pre-wrap;"></pre>
+<script>
+const logEl = document.getElementById('log');
+function log(s){ logEl.textContent = (s + '\n' + logEl.textContent).slice(0, 8000); }
+
+const ws = new WebSocket(`ws://${location.hostname || '192.168.4.1'}/ws`);
+ws.binaryType = 'arraybuffer';
+
+let lastTs = performance.now();
+ws.onopen  = () => log('OPEN');
+ws.onclose = () => log('CLOSE');
+ws.onerror = (e) => log('ERR ' + (e.message || 'Error'));
+
+ws.onmessage = async (ev) => {
+  const now = performance.now();
+  const dt = (now - lastTs).toFixed(1); lastTs = now;
+
+  let buf = ev.data;
+  if (!(buf instanceof ArrayBuffer) && buf && typeof buf.arrayBuffer === 'function') buf = await buf.arrayBuffer();
+
+  if (buf instanceof ArrayBuffer) {
+    const dv = new DataView(buf);
+    log(`BIN len=${dv.byteLength} dt=${dt}ms`);
+    
+    // <--- CAMBIO: Modificado para leer 8 bytes (formato del C++)
+    // La estructura es: i16 yaw, i8 pitch, i8 roll, u16 alt, u8 flags, u8 seq
+    if (dv.byteLength === 8) {
+      let off=0;
+      const yaw_c = dv.getInt16(off, true);  off+=2; // yaw_cdeg (i16)
+      const pit_d = dv.getInt8(off);       off+=1; // pitch_d (i8)
+      const rol_d = dv.getInt8(off);       off+=1; // roll_d (i8)
+      const alt_cm = dv.getUint16(off, true); off+=2; // alt_cm (u16)
+      const flg = dv.getUint8(off);        off+=1; // flags (u8)
+      const seq = dv.getUint8(off);        off+=1; // seq (u8)
+      
+      const yaw = yaw_c / 100.0;
+      log(`SEQ=${seq} ALT=${alt_cm} YPR=${yaw.toFixed(1)},${pit_d},${rol_d} (flg=${flg})`);
+    } else {
+      log(`WARN: Paquete de tamaÃ±o inesperado (${dv.byteLength} bytes)`);
+    }
+  } else {
+    log('TXT ' + String(ev.data));
+  }
+};
+</script>
